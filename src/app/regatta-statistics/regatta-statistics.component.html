@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h2><strong>{{ regatta?.regattaName }}</strong></h2>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3>Teams and Points</h3>
+            <div class="table-controls">
+                <button class="btn btn-primary" (click)="toggleSortOptions()">
+                    Sorting options <i class="fa fa-caret-right"></i>
+                </button>
+                <div *ngIf="showSortOptions" class="sorting-options">
+                    <button class="btn btn-secondary" (click)="sortTeams('yachtName')">Sort by Yacht Name</button>
+                    <button class="btn btn-secondary" (click)="sortTeams('skipper')">Sort by Skipper Name</button>
+                    <button class="btn btn-secondary" (click)="sortTeams('points')">Sort by Points</button>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Yacht Name</th>
+                    <th>Boat Class</th>
+                    <th>Skipper Name</th>
+                    <th>Points</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let team of teams">
+                    <td>{{ team.yachtName }}</td>
+                    <td>{{ team.boatClass }}</td>
+                    <td>{{ team.skipper }}</td>
+                    <td>{{ team.points }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

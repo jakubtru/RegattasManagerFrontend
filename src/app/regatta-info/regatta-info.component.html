@@ -1,0 +1,73 @@
+<div class="card-container">
+    <div class="image">
+      <img [src]="regatta?.imageUrl" class="profile-image" alt="profile-image">
+    </div>
+    <div class="card-box">
+      <p><strong>{{ regatta?.regattaName }}</strong></p>
+      <p><fa-icon [icon]="faCalendarDays"></fa-icon>   {{ regatta?.startDate }} - {{ regatta?.endDate }}</p>
+      <p><fa-icon [icon]="faLocationDot"></fa-icon>  {{ regatta?.location }}</p>
+      <p><fa-icon [icon]="faTags"></fa-icon>  Classes: {{regatta?.boatClasses}}</p>
+      <p><fa-icon [icon]="faMoneyBill"></fa-icon>  Joining fee: {{regatta?.joiningFee}} PLN</p>
+      <p><fa-icon [icon]="faFileText"></fa-icon>    {{ regatta?.description }}</p>
+    </div>
+  <div class ="add">
+    <button class="add-team btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light" data-toggle="modal" data-target="#addTeamModal">Join regatta</button>
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addTeamModal" tabindex="-1" aria-labelledby="addTeamModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign up your Team!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddTeam(addForm)">
+          <div class="forms">
+            <label for="yachtName">Yacht name</label>
+            <input class="input-box" type="text" id="yachtName" ngModel name="yachtName" required>
+          </div>
+          <div class="forms">
+            <label for="boatClass">Boat class</label>
+            <input class="input-box" type="text" id="boatClass" ngModel name="boatClass"  required>
+          </div>
+          <div class="forms">
+            <label for="country">Country</label>
+            <input class="input-box" type="text" id="country" ngModel name="country"  required>
+          </div>
+          <div class="forms">
+            <label for="sailNumber">Number on sail</label>
+            <input class="input-box" type="number" id="sailNumber" ngModel name="sailNumber" required>
+          </div>
+          <div class="forms">
+            <label for="skipper">Skipper name</label>
+            <input class="input-box" type="text" id="skipper" ngModel name="skipper" required>
+          </div>
+          <div class="forms">
+            <label for="licenseNumber">License number</label>
+            <input class="input-box" type="number" id="licenseNumber" ngModel name="licenseNumber" required>
+          </div>
+          <div class="forms">
+            <label for="sailClub">Sail club</label>
+            <input class="input-box" type="text" id="sailClub" ngModel name="sailClub"  required>
+          </div>
+          <div class="forms">
+            <label for="birthdate">Date of birth</label>
+            <input class="input-box" type="text" id="birthdate" ngModel name="birthdate"  required>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" id="close-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Register team</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

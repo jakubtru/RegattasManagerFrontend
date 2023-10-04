@@ -1,0 +1,45 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+
+.home-text {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.main-text {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Onest', sans-serif;
+}
+.secondary-text {
+  font-family: 'Onest', sans-serif;
+}
+.third-text {
+  width:80%;
+  margin: 0 auto;
+}
+.basic-button {
+  left: 180px;
+  top: 25px;
+  margin: 30px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 15px 30px;
+  color: white;
+  background-color: #006DAA;
+}
+button:hover {
+  background-color: #E1BA24;
+}
+
+#title-text {
+  position: absolute;
+  top: 27px;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Onest', sans-serif;
+  left: 50%;
+  transform: translateX(-50%);
+}

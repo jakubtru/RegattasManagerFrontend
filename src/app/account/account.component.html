@@ -1,0 +1,103 @@
+<div class="card-container">
+    <div *ngFor="let regatta of regattas">
+        <div class="card-box">
+            <div>
+                <img src="{{regatta?.imageUrl}}" class="profile-image" alt="profile-image">
+                <p class="date">{{regatta.startDate}} - {{regatta.endDate}}</p>
+            </div>
+            <br>
+            <p><strong>{{regatta.regattaName}}</strong></p>
+            <p>
+                <fa-icon [icon]="faLocationDot"></fa-icon>
+                {{regatta.location}}</p>
+            <button class="basic-button" color="accent" [routerLink]="'/regatta/' + regatta.id">
+                Regatta page
+            </button>
+            <button class="manage-button" color="accent" [routerLink]="'/manageRegatta/' + regatta.id">
+                Manage
+            </button>
+            <button class="results-button" color="accent" [routerLink]="'/regattaStatistics/' + regatta.id">
+                Results
+            </button>
+        </div>
+    </div>
+    <div class="add-box" id="add">
+            <button class="add-regatta" (click)="onOpenModal('add')">Create Regatta<span class="sr-only">(current)</span></button>
+    </div>
+
+</div>
+
+
+<div class="logout-button">
+    <button id="logout" (click)="logout()">
+        <mat-icon>cancel</mat-icon>
+        Logout
+    </button>
+</div>
+<div id="main-container" class="container mt-4">
+    <div class="modal fade" id="createRegattaModal" tabindex="-1" aria-labelledby="createRegattaModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create Regatta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form #addForm="ngForm" (ngSubmit)="onCreateRegatta(addForm)">
+                        <div class="forms">
+                            <label for="regattaName">Regatta Name </label>
+                            <input class="input-box" type="text" id="regattaName" ngModel name="regattaName"
+                                   placeholder="" required>
+                        </div>
+                        <div class="forms">
+                            <label for="startDate">Start Date</label>
+                            <input class="input-box" type="date" id="startDate" ngModel name="startDate" placeholder=""
+                                   required>
+                        </div>
+                        <div class="forms">
+                            <label for="endDate">End Date</label>
+                            <input class="input-box" type="date" id="endDate" ngModel name="endDate" placeholder=""
+                                   required>
+                        </div>
+                        <div class="forms">
+                            <label for="location">Location</label>
+                            <input class="input-box" type="text" id="location" ngModel name="location" placeholder=""
+                                   required>
+                        </div>
+                        <div class="forms">
+                            <label for="imageUrl">Image URL:</label>
+                            <input class="input-box" type="text" id="imageUrl" ngModel name="imageUrl"
+                                   placeholder="" required>
+                        </div>
+                        <div class="forms">
+                            <label for="boatClasses">Boat Classes</label>
+                            <input class="input-box" type="text" id="boatClasses" ngModel name="boatClasses"
+                                   placeholder="" required>
+                        </div>
+                        <div class="forms">
+                            <label for="description">Description</label>
+                            <input class="input-box" type="text" id="description" ngModel name="description"
+                                   placeholder="" required>
+                        </div>
+                        <div class="forms">
+                            <label for="joiningFee">Joining Fee</label>
+                            <input class="input-box" type="number" id="joiningFee" ngModel name="joiningFee"
+                                   placeholder="" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="close-button" class="btn btn-secondary" data-dismiss="modal">
+                                Close
+                            </button>
+                            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Create Regatta
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,144 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>{{ regatta?.regattaName }}</h2>
+      <p>
+        <fa-icon [icon]="faCalendarDays"></fa-icon>
+        {{ regatta?.startDate }} - {{ regatta?.endDate }}</p>
+      <p>
+        <fa-icon [icon]="faLocationDot"></fa-icon>
+        {{ regatta?.location }}</p>
+      <p>
+        <fa-icon [icon]="faTags"></fa-icon>
+        Classes: {{ regatta?.boatClasses }}</p>
+      <p>
+        <fa-icon [icon]="faMoneyBill"></fa-icon>
+        Joining fee: {{ regatta?.joiningFee }} PLN</p>
+      <p>
+        <fa-icon [icon]="faFileText"></fa-icon>
+        {{ regatta?.description }}</p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h3>Teams Participating</h3>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Yacht Name</th>
+          <th>Boat Class</th>
+          <th>Country</th>
+          <th>Number on Sail</th>
+          <th>Skipper Name</th>
+          <th>License Number</th>
+          <th>Sail Club</th>
+          <th>Date of Birth</th>
+          <th>Points</th> <!-- Add a new column for points -->
+          <th>Update points</th> <!-- Add a new column for the delete button -->
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let team of teams">
+          <td>{{ team.yachtName }}</td>
+          <td>{{ team.boatClass }}</td>
+          <td>{{ team.country }}</td>
+          <td>{{ team.sailNumber }}</td>
+          <td>{{ team.skipper }}</td>
+          <td>{{ team.licenseNumber }}</td>
+          <td>{{ team.sailClub }}</td>
+          <td>{{ team.birthdate }}</td>
+          <td>{{ team.points }}</td> <!-- Display points for each team -->
+          <td>
+            <div mat-dialog-content>
+              <mat-form-field style="width: 80px;">
+                <mat-label></mat-label>
+                <input matInput [(ngModel)]="team.points" style="width: 60px;">
+              </mat-form-field>
+            </div>
+            <div mat-dialog-actions>
+              <button (click)="updatePoints(team)" mat-button [mat-dialog-close]="team.points" cdkFocusInitial>Confirm
+              </button>
+            </div>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="onDeleteTeam(team)">Delete</button>
+          </td> <!-- Add a delete button for each team -->
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="onOpenRegattaModal(regatta,'edit')">Edit Regatta</button>
+      <button class="btn btn-danger" (click)="onDeleteRegatta(regatta)">Delete Regatta</button>
+    </div>
+  </div>
+</div>
+
+<div id="main-container" class="container mt-4">
+  <div class="modal fade" id="updateRegattaModal" tabindex="-1" aria-labelledby="updateRegattaModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel3">Edit regatta data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editForm="ngForm">
+            <div class="form-group">
+              <label for="regattaName">Regatta Name</label>
+              <input type="text" class="form-control" id="regattaName" name="regattaName"
+                     ngModel="{{regatta?.regattaName}}">
+            </div>
+            <div class="form-group">
+              <label for="startDate">Start Date</label>
+              <input type="date" class="form-control" id="startDate" name="startDate"
+                     ngModel="{{regatta?.startDate}}">
+            </div>
+            <div class="form-group">
+              <label for="endDate">End Date</label>
+              <input type="date" class="form-control" id="endDate" name="endDate"
+                     ngModel="{{regatta?.endDate}}">
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" class="form-control" id="location" name="location"
+                     ngModel="{{regatta?.location}}">
+            </div>
+            <div class="form-group">
+              <label for="boatClasses">Boat Classes</label>
+              <input type="text" class="form-control" id="boatClasses" name="boatClasses"
+                     ngModel="{{regatta?.boatClasses}}" (blur)="updateBoatClasses()">
+            </div>
+            <div class="form-group">
+              <label for="imageUrl">Image Url</label>
+              <input type="text" class="form-control" id="imageUrl" name="imageUrl"
+                     ngModel="{{regatta?.imageUrl}}">
+            </div>
+            <div class="form-group">
+              <label for="joiningFee">Joining Fee</label>
+              <input type="text" class="form-control" id="joiningFee" name="joiningFee"
+                     ngModel="{{regatta?.joiningFee}}">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" rows="5" id="description" name="description"
+                        ngModel="{{regatta?.description}}"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="onUpdateRegatta(editForm.value)">Save
+              changes
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

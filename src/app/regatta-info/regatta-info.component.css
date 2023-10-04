@@ -1,0 +1,70 @@
+.card-container {
+  padding: 2%;
+  margin: 2%;
+  border-radius: 10px;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: row; /* Set the direction to row */
+  align-items: center; /* Vertically align content in the center */
+  justify-content: space-between; /* Add space between image and text */
+}
+
+.add-team {
+  padding: 5px 10px 7px 10px;
+  margin: 0px 20px 20px 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #E1BA24;
+  color: white;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+}
+label {
+  margin-right: 5px;
+}
+.add {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+}
+
+.forms {
+  padding: 0% 5% 5% 5%;
+}
+
+.basic-button {
+  margin: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 15px 30px;
+  color: white;
+  background-color: #006DAA;
+}
+button:hover {
+  background-color: #006DAA;
+}
+
+.card-box {
+  position: relative;
+  text-align: left;
+  font-size: 20px;
+  color: #000000;
+  font-family: 'Onest', sans-serif;
+  flex: 1;
+  padding: 20px 100px 20px 0px;
+}
+
+.profile-image {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.image {
+  width: 50%;
+}
+

@@ -1,0 +1,185 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 10px 50px 0px 50px;
+
+}
+
+.add-box {
+    position: relative;
+    width: 400px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    text-align: center;
+    border: none;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    min-width: 256px;
+    min-height: 50px;
+}
+
+.add-regatta {
+    white-space: nowrap;
+    color: white;
+    width: 100%;
+    display: block;
+    height: 100%;
+    background-color: #006DAA;
+    border: none;
+    min-width: 256px;
+    min-height: 50px;
+
+}
+
+.card-box {
+    position: relative;
+    width: 400px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    text-align: center;
+    border: none;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.col-sm-4 {
+    left:32%;
+    white-space: nowrap;
+
+    width: 100%;
+    min-width: 256px;
+    min-height: 50px;
+}
+#add {
+    background-color: #006DAA;
+    color: white;
+    min-width: 256px;
+    min-height: 50px;
+}
+
+#add button:hover {
+    background-color: green;
+    color: white;
+}
+.profile-image {
+    width: 400px;
+    height: 250px;
+    border-radius: 10px 10px 0px 0px;
+    border: none;
+}
+.forms {
+    padding: 0% 5% 5% 5%;
+}
+
+label {
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #6499E9;
+}
+
+.date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #E1BA24;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.search {
+    position:absolute;
+    top: 45px;
+    right:390px;
+    color: lightgray;
+    z-index: 1;
+
+}
+
+#search-tab1 {
+    border-radius: 20px;
+    border:none;
+    padding: 13px 11px 11px 11px;
+    width: 200px;
+    height: 45px;
+    font-size: 15px;
+    color: lightgray;
+    background-color:  white;
+    z-index: 1;
+}
+.basic-button {
+    margin: 0px 5px 10px 0px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 15px 30px;
+    width: 210px;
+    color: white;
+    background-color: #E1BA24;
+}
+
+.manage-button {
+    margin: 0px 0px 10px 5px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 15px 30px;
+    width: 138px;
+    color: white;
+    background-color: #0369AF;
+}
+
+.results-button {
+    margin: 0px 0px 10px 5px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 15px 30px;
+    color: white;
+    background-color: green;
+    width: 360px;
+}
+
+.logout-button {
+    position: absolute;
+    background-color: #0369AF;
+    border: 2px solid #D0A821;
+    border-radius: 20px;
+    height: 45px;
+    right: 450px;
+    top: 45px;
+    padding: 5px 13px;
+}
+
+mat-icon button {
+    display: inline;
+}
+
+#logout {
+    position: static;
+    border:none;
+    background-color: #0369AF;
+    color: #D0A821;
+    margin-bottom: 26px;
+    right: 30px;
+    top: 15px;
+    font-size: 23px;
+
+}
+
+#logout:hover {
+    color:red
+    ;
+}
+.icon {
+
+    margin: 10px 5px;
+    position: absolute;
+}

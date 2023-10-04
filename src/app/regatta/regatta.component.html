@@ -1,0 +1,22 @@
+<div class="search">
+  <input type="search" name="key" id="search-tab1" placeholder="Search" #key="ngModel" ngModel
+         (ngModelChange)="searchRegatta(key.value)">
+</div>
+
+<div class="card-container">
+  <div *ngFor="let regatta of regattas">
+    <div class="card-box">
+      <div>
+        <img src="{{regatta?.imageUrl}}" class="profile-image" alt="profile-image">
+        <p class="date">{{regatta.startDate}} - {{regatta.endDate}}</p>
+      </div>
+      <br>
+      <p><strong>{{regatta.regattaName}}</strong></p>
+      <p><fa-icon [icon]="faLocationDot"></fa-icon> {{regatta.location}}</p>
+      <button class="basic-button" color="accent" [routerLink]="'/regatta/' + regatta.id">
+        Go to the regatta page
+      </button>
+    </div>
+  </div>
+</div>
+

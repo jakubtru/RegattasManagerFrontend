@@ -1,0 +1,33 @@
+<!-- src/app/register/register.component.html -->
+<div class="card-container">
+  <div class="card-box">
+    <form (ngSubmit)="onRegister(registerForm)" #registerForm="ngForm">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control"
+               required ngModel #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="error-message">
+          Email is required and must be a valid email address.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" class="form-control"
+               required ngModel #passwordInput="ngModel">
+        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error-message">
+          Password is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password"
+               class="form-control" required ngModel #confirmPasswordInput="ngModel">
+        <div *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched" class="error-message">
+          Passwords must match.
+        </div>
+      </div>
+      <button class="basic-button" type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+    <p class="register-link"><a href="/login">Login</a></p>
+  </div>
+</div>

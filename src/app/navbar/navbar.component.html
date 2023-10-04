@@ -1,0 +1,19 @@
+<div class="beautiful-pane"></div>
+<div class="nav-bar-container">
+  <div class="nav-bar flex">
+    <img class="logo" src="assets/RegattaLogo.png" alt="">
+    <div class="spacer"></div>
+
+    <div class="navbar-buttons">
+      <button id="home-button" mat-icon-button color="accent" [routerLink]="''">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent" fontIcon="home"></mat-icon>Home
+      </button>
+      <button id="regatta-button" mat-icon-button color="accent" [routerLink]="'/regatta'">
+        <mat-icon> directions_boat</mat-icon>Regatta
+      </button>
+      <button id="account-button" mat-icon-button color="accent" (click)="redirectAccount()">
+        <mat-icon class="icon" fontIcon="account_circle"></mat-icon>Account
+      </button>
+    </div>
+  </div>
+</div>

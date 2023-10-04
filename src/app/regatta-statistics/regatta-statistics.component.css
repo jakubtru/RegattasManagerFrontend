@@ -1,0 +1,23 @@
+
+
+.block {
+  background-color: white;
+}
+.table {
+  background-color: white;
+}
+.table-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: self-start;
+  margin-bottom: 10px;
+}
+
+.sorting-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.sorting-options button {
+  margin: 0px 5px;
+}
